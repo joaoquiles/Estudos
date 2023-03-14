@@ -6,4 +6,4 @@ Entendendo as tipagens por valor e referência
 
 Criando projetos do tipo console com Visual Studio 2022
 
-
+Praticando com desafios
