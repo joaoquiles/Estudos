@@ -7,3 +7,5 @@ Conhecendo Variáveis e controle de fluxo
 Entendendo sobre as condicionais e laços de repetição
 
 Conhecendo os principais tipos do C#
+
+Desafios para prática do que foi aprendido
