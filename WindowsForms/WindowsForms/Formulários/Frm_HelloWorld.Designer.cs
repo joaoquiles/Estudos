@@ -47,6 +47,7 @@
             // 
             // Btm_Sair
             // 
+            this.Btm_Sair.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Btm_Sair.Location = new System.Drawing.Point(434, 415);
             this.Btm_Sair.Name = "Btm_Sair";
             this.Btm_Sair.Size = new System.Drawing.Size(150, 23);
@@ -67,6 +68,8 @@
             // 
             // Txt_ConteudoLabel
             // 
+            this.Txt_ConteudoLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Txt_ConteudoLabel.Location = new System.Drawing.Point(34, 122);
             this.Txt_ConteudoLabel.Name = "Txt_ConteudoLabel";
             this.Txt_ConteudoLabel.Size = new System.Drawing.Size(462, 20);
