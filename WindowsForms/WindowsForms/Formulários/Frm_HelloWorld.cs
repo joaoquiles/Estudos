@@ -31,5 +31,10 @@ namespace WindowsForms
         {
 
         }
+
+        private void lbl_Titulo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

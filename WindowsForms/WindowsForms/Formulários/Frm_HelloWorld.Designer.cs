@@ -44,6 +44,7 @@
             this.lbl_Titulo.Size = new System.Drawing.Size(222, 19);
             this.lbl_Titulo.TabIndex = 0;
             this.lbl_Titulo.Text = "Visual Estudio .NET Version";
+            this.lbl_Titulo.Click += new System.EventHandler(this.lbl_Titulo_Click);
             // 
             // Btm_Sair
             // 
