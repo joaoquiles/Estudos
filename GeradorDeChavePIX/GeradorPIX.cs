@@ -6,13 +6,26 @@ using System.Threading.Tasks;
 
 namespace GeradorDeChavePIX
 {
+    /// <summary>
+    /// Classe que gera chaves Pix usando o formato Guid.
+    /// </summary>
     public static class GeradorPIX
     {
+        
+        /// <summary>
+        /// Método que retorna uma chave aleatória de PIX.
+        /// </summary>
+        /// <returns>Retorna uma chave PIX no formato String</returns>
         public static string GetChavePIX()
         {
             return Guid.NewGuid().ToString();
         }
 
+        /// <summary>
+        /// Método que retorna uma lista aleatória de chaves PIX.
+        /// </summary>
+        /// <param name="numeroChaves">Quandtidade de chaves a serem geradas</param>
+        /// <returns>Lista de strings de chaves PIX</returns>
         public static List<string> GetChavesPIX(int numeroChaves)
         {
             if(numeroChaves <= 0)
