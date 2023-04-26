@@ -1,15 +1,26 @@
 using Projeto.Estacionamento.Modelos;
 using Projeto.Estacionamento.Projeto.Estacionamento.Modelos;
+using Xunit.Abstractions;
 
 namespace Projeto.Estacionamento.Testes
 {
-    public class VeiculoTestes
+    public class VeiculoTestes: IDisposable
     {
+        private Veiculo veiculo;
+        public ITestOutputHelper SaidaConsoleTeste;
+
+        public VeiculoTestes(ITestOutputHelper _saidaConsoleTeste)
+        {
+            SaidaConsoleTeste = _saidaConsoleTeste;
+            SaidaConsoleTeste.WriteLine("Construtor Invocado");
+            veiculo = new Veiculo();
+        }
+
         [Fact]
         public void TestaVeiculoAcelerarComParametro10()
         {
             //Arrange
-            var veiculo = new Veiculo();
+            
             //Act
             veiculo.Acelerar(10);
             //Assert
@@ -20,7 +31,7 @@ namespace Projeto.Estacionamento.Testes
         public void TestaVeiculoFrearComParametro10()
         {
             //Arrange
-            var veiculo = new Veiculo();
+            
             //Act
             veiculo.Frear(10);
             //Assert
@@ -36,19 +47,23 @@ namespace Projeto.Estacionamento.Testes
         [Fact]
         public void FichaDeInformacaoDoVeiculo()
         {
-            //Arrange
-            var carro = new Veiculo();
-            carro.Proprietario = "Joao";
-            carro.Tipo = TipoVeiculo.Automovel;
-            carro.Placa = "LDA-1111";
-            carro.Cor = "Preto";
-            carro.Modelo = "Mustang";
+            //Arrange           
+            veiculo.Proprietario = "Joao";
+            veiculo.Tipo = TipoVeiculo.Automovel;
+            veiculo.Placa = "LDA-1111";
+            veiculo.Cor = "Preto";
+            veiculo.Modelo = "Mustang";
 
             //Act
-            string dados = carro.ToString();
+            string dados = veiculo.ToString();
 
             //Assert
             Assert.Contains("Ficha do Veículo:", dados);
+        }
+
+        public void Dispose()
+        {
+            SaidaConsoleTeste.WriteLine("Dispose Invocado");
         }
     }
 }
