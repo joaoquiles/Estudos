@@ -36,6 +36,7 @@ namespace Projeto.Estacionamento.Testes
         [InlineData("Joao", "ASD-1234", "preto", "Gol")]
         [InlineData("Maria", "ASD-4236", "branco", "Celta")]
         [InlineData("Vanessa", "AWQ-1234", "cinza", "EcoSport")]
+        [InlineData("Joarez", "SQW-1234", "preto", "Fusca")]
 
         public void ValidaFaturamentoComVariosVeiculos(string proprietario, string placa, string cor, string modelo)
         {
