@@ -1,4 +1,5 @@
 using Projeto.Estacionamento.Modelos;
+using Projeto.Estacionamento.Projeto.Estacionamento.Modelos;
 
 namespace Projeto.Estacionamento.Testes
 {
@@ -32,6 +33,24 @@ namespace Projeto.Estacionamento.Testes
         public void ValidaNomeProprietario()
         {
 
+        }
+
+        [Fact]
+        public void DadosVeiculo()
+        {
+            //Arrange
+            var carro = new Veiculo();
+            carro.Proprietario = "Joao";
+            carro.Tipo = TipoVeiculo.Automovel;
+            carro.Placa = "LDA-1111";
+            carro.Cor = "Preto";
+            carro.Modelo = "Mustang";
+
+            //Act
+            string dados = carro.ToString();
+
+            //Assert
+            Assert.Contains("Ficha do Veículo:", dados);
         }
     }
 }
