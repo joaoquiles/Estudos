@@ -78,5 +78,31 @@ namespace Projeto.Estacionamento.Testes
             Assert.Equal(placa,consultado.Placa);
         }
 
+        [Fact]
+        public void AlterarDadosVeiculo()
+        {
+            //Arrange
+            var estacionamento = new Patio();
+            var veiculo = new Veiculo();
+            veiculo.Proprietario = "Joao";
+            veiculo.Tipo = TipoVeiculo.Automovel;
+            veiculo.Cor = "Azul";
+            veiculo.Modelo = "Mustang";
+            veiculo.Placa = "asd-9999";
+
+            estacionamento.RegistrarEntradaVeiculo(veiculo);
+
+            var veiculoAlterado = new Veiculo();
+            veiculoAlterado.Proprietario = "Joao";
+            veiculoAlterado.Placa = "asd-9999";
+            veiculoAlterado.Cor = "Preto"; //alterado
+            veiculoAlterado.Modelo = "Mustang";
+
+            //Act
+            Veiculo alterado = estacionamento.AlterarDadosVeiculo(veiculoAlterado);
+
+            //Assert
+            Assert.Equal(alterado.Cor, veiculoAlterado.Cor);
+        }
     }
 }
