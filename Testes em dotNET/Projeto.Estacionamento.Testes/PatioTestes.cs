@@ -13,6 +13,7 @@ namespace Projeto.Estacionamento.Testes
     {
         private Veiculo veiculo;
         private Patio estacionamento;
+        private Operador operador;
         public ITestOutputHelper SaidaConsoleTeste;
 
         public PatioTestes(ITestOutputHelper _saidaConsoleTeste)
@@ -20,6 +21,7 @@ namespace Projeto.Estacionamento.Testes
             SaidaConsoleTeste = _saidaConsoleTeste;            
             veiculo = new Veiculo();
             estacionamento = new Patio();
+            operador = new Operador();
             SaidaConsoleTeste.WriteLine("Construtor Invocado");
         }
 
@@ -31,8 +33,9 @@ namespace Projeto.Estacionamento.Testes
             veiculo.Tipo = TipoVeiculo.Automovel;
             veiculo.Cor = "Azul";
             veiculo.Modelo = "Mustang";
-            veiculo.Placa = "asd-9999";
+            veiculo.Placa = "asd-9999";            
 
+            estacionamento.OperadorPatio = operador;
             estacionamento.RegistrarEntradaVeiculo(veiculo);
             estacionamento.RegistrarSaidaVeiculo(veiculo.Placa);
 
@@ -55,7 +58,9 @@ namespace Projeto.Estacionamento.Testes
             veiculo.Proprietario = proprietario;
             veiculo.Cor = cor;
             veiculo.Modelo = modelo;
-            veiculo.Placa = placa;
+            veiculo.Placa = placa;           
+
+            estacionamento.OperadorPatio = operador;
             estacionamento.RegistrarEntradaVeiculo(veiculo);
             estacionamento.RegistrarSaidaVeiculo(veiculo.Placa);
 
@@ -75,7 +80,9 @@ namespace Projeto.Estacionamento.Testes
             veiculo.Proprietario = proprietario;
             veiculo.Cor = cor;
             veiculo.Modelo = modelo;
-            veiculo.Placa = placa;
+            veiculo.Placa = placa;                      
+
+            estacionamento.OperadorPatio = operador;
             estacionamento.RegistrarEntradaVeiculo(veiculo);
 
             //Act
@@ -95,6 +102,7 @@ namespace Projeto.Estacionamento.Testes
             veiculo.Modelo = "Mustang";
             veiculo.Placa = "asd-9999";
 
+            estacionamento.OperadorPatio = operador;
             estacionamento.RegistrarEntradaVeiculo(veiculo);
 
             var veiculoAlterado = new Veiculo();
