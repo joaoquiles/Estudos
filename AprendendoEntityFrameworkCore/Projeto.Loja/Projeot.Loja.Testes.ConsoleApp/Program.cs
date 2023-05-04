@@ -12,7 +12,22 @@ namespace Projeto.Loja.Testes.ConsoleApp
         {
             //GravarUsandoAdoNet();
             //GravarUsandoEntity();
-            GravarMultiplosProdutosUsandoEntity();
+            //GravarMultiplosProdutosUsandoEntity();
+            RecuperarProdutos();
+        }
+
+        private static void RecuperarProdutos()
+        {
+            using (var repo = new LojaContext())
+            {
+                IList<Produto> produtos = repo.Produtos.ToList();
+                foreach (var item in produtos)
+                {
+                    Console.WriteLine(item.Nome);
+                    
+                }
+                Console.ReadLine();
+            }
         }
 
         private static void GravarUsandoEntity()
