@@ -105,5 +105,10 @@ namespace Projeto.Loja.Testes.ConsoleApp
 
             return lista;
         }
+
+        public void AdicionarMultiplos(params Produto[] multiples)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -11,12 +11,12 @@ namespace Projeto.Loja.Testes.ConsoleApp
         static void Main(string[] args)
         {
             //GravarUsandoAdoNet();
-            //GravarUsandoEntity();
+            GravarUsandoEntity();
             //GravarMultiplosProdutosUsandoEntity();
-            //RecuperarProdutos();
+            RecuperarProdutos();
             //ExcluirProdutos();
             //RecuperarProdutos();
-            AtualizarProduto();
+            //AtualizarProduto();
         }
 
         private static void AtualizarProduto()
@@ -97,10 +97,9 @@ namespace Projeto.Loja.Testes.ConsoleApp
             p3.Categoria = "Livros";
             p3.Preco = 19.89;
 
-            using (var contexto = new LojaContext())
+            using (var contexto = new ProdutoDAOEntity())
             {
-                contexto.Produtos.AddRange(p1,p2,p3);
-                contexto.SaveChanges();
+                contexto.AdicionarMultiplos(p1,p2,p3);
             }
         }
 

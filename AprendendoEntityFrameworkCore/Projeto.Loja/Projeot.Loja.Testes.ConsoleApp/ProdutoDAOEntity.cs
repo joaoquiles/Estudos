@@ -19,7 +19,16 @@ namespace Projeto.Loja.Testes.ConsoleApp
         {
             contexto.Produtos.Add(p);
             contexto.SaveChanges();
-        }      
+        }
+
+        public void AdicionarMultiplos(params Produto[] multiples)
+        {
+            foreach (var p in multiples)
+            {
+                contexto.Produtos.Add(p);
+                contexto.SaveChanges();
+            }
+        }
 
         public void Atualizar(Produto p)
         {
