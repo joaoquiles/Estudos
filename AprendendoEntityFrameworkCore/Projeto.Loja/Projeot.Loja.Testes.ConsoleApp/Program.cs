@@ -26,12 +26,11 @@ namespace Projeto.Loja.Testes.ConsoleApp
             RecuperarProdutos();
 
             //atualizar o produto
-            using(var repo = new LojaContext())
+            using(var repo = new ProdutoDAOEntity())
             {
-                Produto produtos = repo.Produtos.First();
+                Produto produtos = repo.Produtos().First();
                 produtos.Nome = "Cassino Toyale - Editado";
-                repo.Produtos.Update(produtos);
-                repo.SaveChanges();
+                repo.Atualizar(produtos);
             }
             RecuperarProdutos();
 
@@ -39,25 +38,25 @@ namespace Projeto.Loja.Testes.ConsoleApp
 
         private static void ExcluirProdutos()
         {
-            using(var repo = new LojaContext()) 
+            using(var repo = new ProdutoDAOEntity()) 
             {
-                IList<Produto> produtos = repo.Produtos.ToList();
+                IList<Produto> produtos = repo.Produtos();
                 
                 foreach(var item in produtos) 
                 {
-                    repo.Produtos.Remove(item);
+                    repo.Remover(item);
 
 
                 }
-                repo.SaveChanges();
+                
             }
         }
 
         private static void RecuperarProdutos()
         {
-            using (var repo = new LojaContext())
+            using (var repo = new ProdutoDAOEntity())
             {
-                IList<Produto> produtos = repo.Produtos.ToList();
+                IList<Produto> produtos = repo.Produtos();
                 Console.WriteLine("Foram encontrados {0} produto(s).", produtos.Count);
                 foreach (var item in produtos)
                 {
@@ -75,10 +74,9 @@ namespace Projeto.Loja.Testes.ConsoleApp
             p.Categoria = "Livros";
             p.Preco = 19.89;
 
-            using (var contexto = new LojaContext())
+            using (var contexto = new ProdutoDAOEntity())
             {
-                contexto.Produtos.Add(p);
-                contexto.SaveChanges();
+                contexto.Adicionar(p);
             }
         }
 
