@@ -13,6 +13,8 @@ namespace Projeto.Loja.Testes.ConsoleApp
         void Remover(Produto p);
         IList<Produto> Produtos();
         void AdicionarMultiplos(params Produto[] multiples);
+
+        
         
     }
 }
