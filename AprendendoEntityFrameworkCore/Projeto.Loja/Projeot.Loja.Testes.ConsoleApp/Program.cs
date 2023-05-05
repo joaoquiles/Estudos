@@ -12,10 +12,29 @@ namespace Projeto.Loja.Testes.ConsoleApp
         {
             //GravarUsandoAdoNet();
             //GravarUsandoEntity();
-            GravarMultiplosProdutosUsandoEntity();
+            //GravarMultiplosProdutosUsandoEntity();
+            //RecuperarProdutos();
+            //ExcluirProdutos();
+            //RecuperarProdutos();
+            AtualizarProduto();
+        }
+
+        private static void AtualizarProduto()
+        {
+            //incluir um produto produto
+            GravarUsandoEntity();
             RecuperarProdutos();
-            ExcluirProdutos();
+
+            //atualizar o produto
+            using(var repo = new LojaContext())
+            {
+                Produto produtos = repo.Produtos.First();
+                produtos.Nome = "Cassino Toyale - Editado";
+                repo.Produtos.Update(produtos);
+                repo.SaveChanges();
+            }
             RecuperarProdutos();
+
         }
 
         private static void ExcluirProdutos()
